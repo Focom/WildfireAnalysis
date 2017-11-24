@@ -386,5 +386,9 @@ GitHub.sublime-settings
 
 # End of https://www.gitignore.io/api/vim,node,linux,macos,python,windows,pycharm,intellij,visualstudiocode
 
+# Database stuff 
 /DataSet/FPA_FOD_20170508.sqlite
 /DataSet/FPA_FOD_20170508.sqlite.zip
+
+# Misc
+/bfg.jar
