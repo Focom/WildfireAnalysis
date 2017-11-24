@@ -1,0 +1,1 @@
+wget https://www.kaggle.com/rtatman/188-million-us-wildfires/downloads/188-million-us-wildfires.zip
