@@ -49,14 +49,10 @@ async function writeToFile (appDir, year, fields) {
   })
 }
 
-for (var i = 1992; i < 2016; i++) {
-  console.log(i)
-}
-
 function createAllJSON () {
   for (var i = 1992; i < 2016; i++) {
     writeToFile(appDir, i, constant.fields)
   }
 }
 
-createAllJSON()
+// createAllJSON()
