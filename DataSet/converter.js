@@ -55,4 +55,8 @@ function createAllJSON () {
   }
 }
 
+//First be sure to have the FPA_FOD_20170508.sqlite file in this folder 
+// Call this function to create the required json to populate the mongodatabase
 // createAllJSON()
+
+// Once done execute the importDocuments script, your mongodb will be ready in seconds.
