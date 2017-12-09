@@ -4,6 +4,7 @@
 
 Download the SQLite database from the [kaggle website](https://www.kaggle.com/rtatman/188-million-us-wildfires/data)
 
+Unzip the file and **put the SQLite database in the Dataset folder**
 
 Install all the node js depedencies:
 
