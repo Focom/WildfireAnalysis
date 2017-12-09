@@ -1,0 +1,52 @@
+#us-map{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  
+  margin-top: 5%;
+
+	}
+path:hover, circle:hover {
+  stroke: #002868 !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #002868 !important;
+  cursor: pointer;
+}
+#path67 {
+  fill: none !important;
+  stroke: #A9A9A9 !important;
+  cursor: default;
+}
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+body{
+	background-color: #E1E7EB; 
+}
+#cardContainer{
+	margin-left: 5%;
+	float: left;
+	width: 25%;
+	padding-top: 0px -important;
+}
+#cardsContainer{
+	margin-top: 80px;
+	float: left;
+	width: 100%;
+}
