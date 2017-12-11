@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>WildFireAnalysis</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../personal2.css" />
+        <!-- Load c3.css -->
+<link href="../../c3/c3.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="../../d3/d3.min.js" charset="utf-8"></script>
+<script src="../../c3/c3.min.js"></script>
+
+</head>
+<body>
+      <script src="../data2.js"></script>
+      <script src="../graph.js"></script>
+      
+  
+        <script src="../chroma.js"></script>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="../index.html" class="brand-logo logo">WildFireAnalysis</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="../bench.html">Benchmark</a>
+            </li>
+            <li>
+                <a href="../git.html">Github</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+        <div id="page-Maps">
+                <div class="titre"><p >
+                    Temps total écoulé entre la découverte et le contrôle du feu, chaque année:
+                    </p></div>
+                 
+                  <div id="chart" class="graph"></div>
+                  <script> constructGraph(fireTimes);</script>
+
+           <div id="map" class="mapContainer" style="flex-grow: 1;">
+                        
+            </div>
+  
+            <div class="infos-Maps" style="text-align:left; flex-grow: 8; margin-top:0%;">
+              
+                                         <h id="titreResume">MAP/REDUCE:</h>
+<pre style="height:80%;width:90%;overflow:auto;scrollbar-base-color:gold;font-family:sans-serif; border:1px solid;padding:11px;background-color:#ff2b2b0d;"><code >var map = function () {
+if (this.DISCOVERY_DATE === this.CONT_DATE) {
+try{
+let h1 = this.DISCOVERY_TIME.toString()[0] + this.DISCOVERY_TIME.toString()[1];
+h1 = parseInt(h1);
+let h2 = this.CONT_TIME.toString()[0] + this.CONT_TIME.toString()[1];
+h2 = parseInt(h2);
+let m1 = this.DISCOVERY_TIME.toString()[2] + this.DISCOVERY_TIME.toString()[3];
+m1 = parseInt(m1);
+let m2 = this.CONT_TIME.toString()[2] + this.CONT_TIME.toString()[3];
+m2 = parseInt(m2);
+let temp1 = Math.abs(h1 - h2) * 60;
+let temp2 = Math.abs(m1 - m2);
+let result = temp1 + temp2;
+emit(this.FIRE_YEAR, result);}
+catch(e){
+emit(this.FIRE_YEAR,90);
+}
+}  else {
+try{
+let hourDay = Math.abs(this.DISCOVERY_DATE - this.CONT_DATE) * 24 * 60;
+let h1 = this.DISCOVERY_TIME.toString()[0] + this.DISCOVERY_TIME.toString()[1];
+h1 = parseInt(h1);
+let h2 = this.CONT_TIME.toString()[0] + this.CONT_TIME.toString()[1];
+h2 = parseInt(h2);
+let m1 = this.DISCOVERY_TIME.toString()[2] + this.DISCOVERY_TIME.toString()[3];
+m1 = parseInt(m1);
+let m2 = this.CONT_TIME.toString()[2] + this.CONT_TIME.toString()[3];
+m2 = parseInt(m2);
+let temp1 = Math.abs(h1 - h2) * 60;
+let temp2 = Math.abs(m1 - m2);
+let result = temp1 + temp2 + hourDay;
+emit(this.FIRE_YEAR, result);}
+catch(e){
+emit(this.FIRE_YEAR,90);     
+}>
+}}
+                                          
+                                        
+var reduce = function (key, values) {<br>
+  return (Array.sum(values))<br>
+}<br></code></pre>
+                                        
+                                          
+                                          
+                                    
+                                          
+                                          <h id="titreResume ">Notre fonction:</h></br><pre style="height:35px;width:90%;overflow:auto;scrollbar-base-color:gold;font-family:sans-serif; border:1px solid;padding:11px;background-color:#ff2b2b0d;"><code>db.Fires.mapReduce(map,reduce,{query:{STATE:"NJ"},out:{inline:1}});</code></pre></p>
+              
+                                            
+                          </div>
+       
+   
+        </div>
+    </body>
+    
+    </html>
